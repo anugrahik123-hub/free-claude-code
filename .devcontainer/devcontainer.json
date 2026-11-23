@@ -1,0 +1,15 @@
+{
+  "postStartCommand": "bash -lc 'export PATH=\"$HOME/.local/bin:$PATH\"; chmod +x ./start.sh && setsid ./start.sh >/tmp/start.log 2>&1 </dev/null & sleep 5'",
+  "portsAttributes": {
+    "8082": {
+      "label": "FCC Server",
+      "visibility": "public",
+      "onAutoForward": "silent"
+    },
+    "8765": {
+      "label": "Claude Bridge",
+      "visibility": "public",
+      "onAutoForward": "silent"
+    }
+  }
+}
