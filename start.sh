@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export FCC_ADMIN_ALLOWED_IPS="10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
+export FCC_ADMIN_ALLOWED_IPS="0.0.0.0/1,128.0.0.0/1,::/1,8000::/1"
 export FCC_TRUSTED_PROXY_IPS="10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
 export PATH="$HOME/.local/bin:$PATH"
 set -euo pipefail
