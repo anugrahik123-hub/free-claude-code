@@ -1,5 +1,5 @@
 {
-  "postStartCommand": "bash -lc 'export PATH=\"$HOME/.local/bin:$PATH\"; command -v fcc-server >/dev/null 2>&1 || uv tool install . >/tmp/uv-install.log 2>&1; chmod +x ./start.sh && nohup ./start.sh >/tmp/start.log 2>&1 </dev/null & sleep 3'",
+  "postStartCommand": "bash -lc 'export PATH=\"$HOME/.local/bin:$PATH\"; if ! command -v fcc-server >/dev/null 2>&1; then for i in 1 2 3; do UV_HTTP_TIMEOUT=120 uv tool install . >/tmp/uv-install.log 2>&1 && break; sleep 3; done; fi; chmod +x ./start.sh && nohup ./start.sh >/tmp/start.log 2>&1 </dev/null & sleep 3'",
   "portsAttributes": {
     "8082": {
       "label": "FCC Server",
