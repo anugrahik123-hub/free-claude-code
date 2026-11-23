@@ -1,7 +1,15 @@
 {
-  "postStartCommand": "bash -lc 'echo \"precedence ::ffff:0:0/96 100\" | sudo tee -a /etc/gai.conf >/dev/null; export PATH=\"$HOME/.local/bin:$PATH\"; command -v fcc-claude >/dev/null 2>&1 || pip install --user --break-system-packages . >/tmp/pip.log 2>&1; nohup ./start.sh >/tmp/start.log 2>&1 </dev/null & sleep 3'",
+  "postStartCommand": "bash ./boot.sh",
   "portsAttributes": {
-    "8082": { "label": "FCC Server", "visibility": "public", "onAutoForward": "silent" },
-    "8765": { "label": "Claude Bridge", "visibility": "public", "onAutoForward": "silent" }
+    "8082": {
+      "label": "FCC Server",
+      "visibility": "public",
+      "onAutoForward": "silent"
+    },
+    "8765": {
+      "label": "Claude Bridge",
+      "visibility": "public",
+      "onAutoForward": "silent"
+    }
   }
 }
